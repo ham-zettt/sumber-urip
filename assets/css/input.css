@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  body {
+    @apply font-sans text-body min-h-screen bg-white;
+  }
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  .num {
+    @apply tabular-nums text-right;
+  }
+  .label {
+    @apply block text-small font-medium text-ink-soft mb-1.5;
+  }
+  .card {
+    @apply bg-white border border-line rounded-lg shadow-card;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
